@@ -11,4 +11,9 @@ public class App {
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
     }
+
+    public String getPriceLabel(String itemName, double price) {
+        return "The price for item: " + itemName + " is " + price;
+    }
+
 }

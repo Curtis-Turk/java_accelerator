@@ -17,6 +17,6 @@ public class AppTest {
     public void getPriceLabel() {
         App classUnderTest = new App();
         assertEquals("app should return item along with price", String.valueOf("The price for item: mug is 4.99"),
-                getPriceLabel("mug", 4.99));
+                classUnderTest.getPriceLabel("mug", 4.99));
     }
 }
