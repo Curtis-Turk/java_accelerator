@@ -6,7 +6,8 @@ public class Calculator {
 
   }
 
-  Integer add(int int1, int int2) {
+  Float add(float int1, float int2) {
+    System.out.println(int1);
     return int1 + int2;
   }
 }
