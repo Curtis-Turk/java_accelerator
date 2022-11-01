@@ -3,7 +3,6 @@ package calculator;
 public class Calculator {
 
   public static void main(Integer[] args) {
-
   }
 
   Float add(float int1, float int2) {
