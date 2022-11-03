@@ -4,29 +4,55 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import static org.mockito.Mockito.*;
+
 public class GameTest {
+
+  @Test
+  public void getAttempts() {
+    WordChoser mockedWC = mock(WordChoser.class);
+    Game game = new Game(mockedWC);
+    assertEquals(game.getRemainingAttempts(), 10);
+  }
+
   @Test
   public void testGetsWordToGuess() {
-    Game game = new Game();
-    assertEquals(game.getWordToGuess("BOOKS"), "B____");
+    WordChoser mockedWC = mock(WordChoser.class);
+    when(mockedWC.getRandomWordFromDictionary()).thenReturn("BOOKS");
+    Game game = new Game(mockedWC);
+    assertEquals(game.getWordToGuess(), "B____");
   }
 
   @Test
   public void makersWordToGuess() {
-    String word = "MAKERS";
-    Game game = new Game();
-    assertEquals(game.getWordToGuess(word), "M_____");
+    WordChoser mockedWC = mock(WordChoser.class);
+    when(mockedWC.getRandomWordFromDictionary()).thenReturn("MAKERS");
+    Game game = new Game(mockedWC);
+    assertEquals(game.getWordToGuess(), "M_____");
   }
 
   @Test
-  public void getAttempts() {
-    Game game = new Game();
-    assertEquals(game.getRemainingAttempts(), 10);
+  public void testGuessLetterTrue() {
+    WordChoser mockedWC = mock(WordChoser.class);
+    when(mockedWC.getRandomWordFromDictionary()).thenReturn("MAKERS");
+    Game game = new Game(mockedWC);
+    assertEquals(game.guessLetter('A'), true);
   }
 
-  // @Test
-  // public void testRandomWord() {
-  // Game game = new Game();
-  // assertEquals(game.getRandomWordFromDictionary(), "MAKERS");
-  // }
+  @Test
+  public void testGuessLetterFalse() {
+    WordChoser mockedWC = mock(WordChoser.class);
+    when(mockedWC.getRandomWordFromDictionary()).thenReturn("MAKERS");
+    Game game = new Game(mockedWC);
+    assertEquals(game.guessLetter('X'), false);
+  }
+
+  @Test
+  public void checkFailedAttempt() {
+    WordChoser mockedWC = mock(WordChoser.class);
+    when(mockedWC.getRandomWordFromDictionary()).thenReturn("MAKERS");
+    Game game = new Game(mockedWC);
+    game.guessLetter('X');
+    assertEquals(game.getRemainingAttempts(), 9);
+  }
 }

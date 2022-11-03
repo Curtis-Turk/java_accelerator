@@ -12,4 +12,5 @@ public class WordChoserTest {
     String[] MOCK_DICTIONARY = { "MAKERS", "CANDIES", "DEVELOPER", "LONDON" };
     assertTrue(Arrays.asList(MOCK_DICTIONARY).contains(wordChoser.getRandomWordFromDictionary()));
   }
+
 }
