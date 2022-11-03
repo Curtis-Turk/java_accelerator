@@ -4,14 +4,14 @@ import java.util.Random;
 
 public class Game {
 
+  Game() {
+    inputWord = getRandomWordFromDictionary();
+  }
+
   String inputWord;
   int attemptCounter = 10;
 
   public static final String[] DICTIONARY = { "MAKERS", "CANDIES", "DEVELOPER", "LONDON" };
-
-  Game() {
-    inputWord = getRandomWordFromDictionary();
-  }
 
   public int getRemainingAttempts() {
     return attemptCounter;
