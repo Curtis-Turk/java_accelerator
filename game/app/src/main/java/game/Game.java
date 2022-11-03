@@ -1,16 +1,20 @@
 package game;
 
-public class Game {
-  String inputWord;
-  String hiddenWord;
+import java.util.Random;
 
-  Game(String word) {
-    inputWord = word;
+public class Game {
+
+  String inputWord;
+  int attemptCounter = 10;
+
+  public static final String[] DICTIONARY = { "MAKERS", "CANDIES", "DEVELOPER", "LONDON" };
+
+  Game() {
+    inputWord = getRandomWordFromDictionary();
   }
 
-  public String hideWord() {
-
-    return inputWord;
+  public int getRemainingAttempts() {
+    return attemptCounter;
   }
 
   public String getWordToGuess(String word) {
@@ -22,5 +26,12 @@ public class Game {
     }
 
     return sb.toString();
+  }
+
+  public String getRandomWordFromDictionary() {
+    Random rdm = new Random();
+
+    int randIndex = rdm.nextInt(DICTIONARY.length);
+    return DICTIONARY[randIndex];
   }
 }

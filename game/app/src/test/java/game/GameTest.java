@@ -7,15 +7,26 @@ import org.junit.Test;
 public class GameTest {
   @Test
   public void testGetsWordToGuess() {
-    String word = "BOOKS";
-    Game game = new Game(word);
-    assertEquals(game.getWordToGuess(word), "B____");
+    Game game = new Game();
+    assertEquals(game.getWordToGuess("BOOKS"), "B____");
   }
 
   @Test
   public void makersWordToGuess() {
     String word = "MAKERS";
-    Game game = new Game(word);
+    Game game = new Game();
     assertEquals(game.getWordToGuess(word), "M_____");
   }
+
+  @Test
+  public void getAttempts() {
+    Game game = new Game();
+    assertEquals(game.getRemainingAttempts(), 10);
+  }
+
+  // @Test
+  // public void testRandomWord() {
+  // Game game = new Game();
+  // assertEquals(game.getRandomWordFromDictionary(), "MAKERS");
+  // }
 }
