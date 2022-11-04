@@ -1,12 +1,18 @@
 package game;
 
 import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.*;
 
 import org.junit.Test;
 
 import static org.mockito.Mockito.*;
 
 public class GameTest {
+
+  @BeforeEach
+  public void setup() {
+
+  }
 
   @Test
   public void getAttempts() {
