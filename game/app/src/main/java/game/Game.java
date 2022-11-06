@@ -4,10 +4,13 @@ import java.util.ArrayList;
 
 public class Game {
   String word;
+  Masker masker;
+  String maskedString;
   int attemptCounter = 10;
   ArrayList<Character> guessedLetters = new ArrayList<Character>();
 
-  Game(WordChoser wChoser) {
+  Game(WordChoser wChoser, Masker mask) {
+    masker = mask;
     word = wChoser.getRandomWordFromDictionary();
   }
 
@@ -16,12 +19,7 @@ public class Game {
   }
 
   public String getWordToGuess() {
-    StringBuilder sb = new StringBuilder(word);
-
-    for (int i = 1; i < word.length(); i++) {
-      sb.replace(i, word.length(), "_");
-    }
-    return sb.toString();
+    return masker.getMaskedWord(word, guessedLetters);
   }
 
   public Boolean guessLetter(char letter) {
