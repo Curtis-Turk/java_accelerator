@@ -8,7 +8,9 @@ public class Masker {
     StringBuilder sb = new StringBuilder(word);
 
     for (int i = 1; i < word.length(); i++) {
-      sb.replace(i, word.length(), "_");
+      if (!guessedLetters.contains(word.charAt(i))) {
+        sb.replace(i, i + 1, "_");
+      }
     }
     return sb.toString();
   }
