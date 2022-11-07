@@ -74,4 +74,14 @@ public class LeapYearsTest {
         correctYears.add(12);
         assertEquals(ly.allLeapYears(0,12), correctYears);
     }
+    @Test
+    public void returnsRandomThreeLeapYear(){
+        LeapYears ly = new LeapYears();
+        ArrayList<Integer> correctYears = new ArrayList<Integer>();
+        correctYears.add(2020);
+        correctYears.add(2024);
+        correctYears.add(2028);
+        correctYears.add(2032);
+        assertEquals(ly.allLeapYears(2020,2032), correctYears);
+    }
 }
