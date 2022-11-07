@@ -2,6 +2,8 @@ package leap_years_gradle;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LeapYearsTest {
@@ -54,5 +56,22 @@ public class LeapYearsTest {
     public void div4NotBy100(){
         LeapYears ly = new LeapYears();
         assertEquals(ly.isLeapYear(2004), true);
+    }
+    @Test
+    public void returnFirstLeapYear(){
+        LeapYears ly = new LeapYears();
+        ArrayList<Integer> correctYears = new ArrayList<Integer>();
+        correctYears.add(4);
+
+        assertEquals(ly.allLeapYears(0,5), correctYears);
+    }
+    @Test
+    public void returnFirstThreeLeapYear(){
+        LeapYears ly = new LeapYears();
+        ArrayList<Integer> correctYears = new ArrayList<Integer>();
+        correctYears.add(4);
+        correctYears.add(8);
+        correctYears.add(12);
+        assertEquals(ly.allLeapYears(0,12), correctYears);
     }
 }
