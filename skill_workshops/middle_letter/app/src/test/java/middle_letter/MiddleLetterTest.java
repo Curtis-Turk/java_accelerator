@@ -13,4 +13,20 @@ public class MiddleLetterTest {
         MiddleLetter ml = new MiddleLetter();
         assertEquals(ml.middle("AB"),"AB");
     }
+    @Test public void returnsBLetter(){
+        MiddleLetter ml = new MiddleLetter();
+        assertEquals(ml.middle("ABC"),"B");
+    }
+    @Test public void returnsBCLetter(){
+        MiddleLetter ml = new MiddleLetter();
+        assertEquals(ml.middle("ABCD"),"BC");
+    }
+    @Test public void returnsTest(){
+        MiddleLetter ml = new MiddleLetter();
+        assertEquals(ml.middle("test"),"es");
+    }
+    @Test public void returnsMiddle(){
+        MiddleLetter ml = new MiddleLetter();
+        assertEquals(ml.middle("middle"),"dd");
+    }
 }
