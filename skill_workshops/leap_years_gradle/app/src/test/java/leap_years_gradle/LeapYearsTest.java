@@ -40,4 +40,19 @@ public class LeapYearsTest {
         LeapYears ly = new LeapYears();
         assertEquals(ly.isLeapYear(1900), false);
     }
+    @Test
+    public void fourthExample(){
+        LeapYears ly = new LeapYears();
+        assertEquals(ly.isLeapYear(1988), true);
+    }
+    @Test
+    public void fifthExample(){
+        LeapYears ly = new LeapYears();
+        assertEquals(ly.isLeapYear(1500), false);
+    }
+    @Test
+    public void div4NotBy100(){
+        LeapYears ly = new LeapYears();
+        assertEquals(ly.isLeapYear(2004), true);
+    }
 }
