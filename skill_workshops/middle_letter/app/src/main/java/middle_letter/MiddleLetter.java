@@ -3,11 +3,11 @@ package middle_letter;
 public class MiddleLetter {
 
     public String middle(String inputString){
-        Integer strLength = inputString.length();
+        int strLength = inputString.length();
+        int middleIndex = strLength/2;
         if(strLength % 2 == 1){
-            return buildString(inputString, strLength /2);
+            return buildString(inputString, middleIndex);
         }else{
-            int middleIndex = strLength/2;
             return buildString(inputString, (middleIndex - 1)) +
                     buildString(inputString, middleIndex);
         }
