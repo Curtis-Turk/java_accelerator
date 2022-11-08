@@ -55,5 +55,15 @@ public class ScrabbleSolverTest {
         ScrabbleSolver scrabbleSolver = new ScrabbleSolver("OXYPHENBUTAZONE");
         assertEquals(scrabbleSolver.score(), 41);
     }
+    @Test
+    public void is14WhenGivenQUIRKY(){
+        ScrabbleSolver scrabbleSolver = new ScrabbleSolver("QUIRKY");
+        assertEquals(scrabbleSolver.score(), 22);
+    }
+    @Test
+    public void is14WhenGivenLowerCase(){
+        ScrabbleSolver scrabbleSolver = new ScrabbleSolver("quirky");
+        assertEquals(scrabbleSolver.score(), 22);
+    }
 }
 

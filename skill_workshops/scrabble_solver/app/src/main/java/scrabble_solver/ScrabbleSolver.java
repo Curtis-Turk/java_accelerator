@@ -7,7 +7,7 @@ public class ScrabbleSolver {
     Map<Character, Integer> letterScore;
 
     ScrabbleSolver(String inputWord){
-        word = inputWord;
+        word = inputWord.toUpperCase(Locale.ROOT);
         setLetterScores();
     }
     public Integer score(){
