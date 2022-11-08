@@ -8,7 +8,7 @@ public class ScrabbleSolver {
 
     ScrabbleSolver(String inputWord){
         word = inputWord.toUpperCase(Locale.ROOT);
-        setLetterScores();
+        populateHashMap();
     }
     public Integer score(){
         int total = 0;
@@ -19,29 +19,19 @@ public class ScrabbleSolver {
         }
         return total;
     }
-    public void setLetterScores(){
+    public void populateHashMap(){
         letterScore = new HashMap<>();
-        String onePoint = "AEIOULNRST";
-        for (int i = 0; i < onePoint.length(); i++) {
-            letterScore.put(onePoint.charAt(i), 1);
+        setLetterScores("AEIOULNRST", 1);
+        setLetterScores("DG", 2);
+        setLetterScores("BCMP", 3);
+        setLetterScores("FHVWY", 4);
+        setLetterScores("K", 5);
+        setLetterScores("JX", 8);
+        setLetterScores("QZ", 10);
+    }
+    public void setLetterScores (String letters, int score){
+        for (int i = 0; i < letters.length(); i++) {
+            letterScore.put(letters.charAt(i), score);
         }
-
-        letterScore.put('D', 2);
-        letterScore.put('G', 2);
-
-        String threePoints = "BCMP";
-        for (int i = 0; i < threePoints.length(); i++) {
-            letterScore.put(threePoints.charAt(i), 3);
-        }
-
-        String fourPoints = "FHVWY";
-        for (int i = 0; i < fourPoints.length(); i++) {
-            letterScore.put(fourPoints.charAt(i), 4);
-        }
-        letterScore.put('K', 5);
-        letterScore.put('J', 8);
-        letterScore.put('X', 8);
-        letterScore.put('Q', 10);
-        letterScore.put('Z', 10);
     }
 }
