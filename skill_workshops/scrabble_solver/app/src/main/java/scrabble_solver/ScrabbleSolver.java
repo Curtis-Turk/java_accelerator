@@ -1,11 +1,12 @@
 package scrabble_solver;
 
 public class ScrabbleSolver {
-    char word;
-    ScrabbleSolver(char inputWord){
+    String word;
+    ScrabbleSolver(String inputWord){
         word = inputWord;
     }
     public Integer score(){
-        return 1;
+       if(word == " ") return 0;
+       return word.length();
     }
 }
