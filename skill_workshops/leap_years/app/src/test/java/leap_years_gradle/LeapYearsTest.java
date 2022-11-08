@@ -7,9 +7,11 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LeapYearsTest {
+
     @Test
     public void trueIf400() {
         LeapYears ly = new LeapYears();
+
         assertEquals(ly.isLeapYear(400), true);
     }
 

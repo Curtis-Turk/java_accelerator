@@ -19,4 +19,11 @@ public class TenMinWalkTest {
         String[] walk = {"W","","","","","","","","","",""};
         assertFalse(tenMinWalk.ten_minute_walk(walk));
     }
+    @Test
+    public void trueWhenWalkIs10minAndGoesBackToOrigin(){
+        TenMinWalk tenMinWalk = new TenMinWalk();
+        String[] walk = {"W","E","W","E","W","E","W","E","W","E"};
+        assertTrue(tenMinWalk.ten_minute_walk(walk));
+    }
+    
 }
