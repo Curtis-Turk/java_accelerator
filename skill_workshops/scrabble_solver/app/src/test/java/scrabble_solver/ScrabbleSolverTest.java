@@ -11,7 +11,7 @@ public class ScrabbleSolverTest {
         assertEquals(scrabbleSolver.score(), 1);
     }
     @Test
-    public void is0whenGivenString(){
+    public void is0whenGivenEmptyString(){
         ScrabbleSolver scrabbleSolver = new ScrabbleSolver(" ");
         assertEquals(scrabbleSolver.score(), 0);
     }
