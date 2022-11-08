@@ -11,39 +11,49 @@ public class ScrabbleSolverTest {
         assertEquals(scrabbleSolver.score(), 1);
     }
     @Test
-    public void returns0whenGivenString(){
+    public void is0whenGivenString(){
         ScrabbleSolver scrabbleSolver = new ScrabbleSolver(" ");
         assertEquals(scrabbleSolver.score(), 0);
     }
     @Test
-    public void returns2whenGivenTwoAs(){
+    public void is2whenGivenTwoAs(){
         ScrabbleSolver scrabbleSolver = new ScrabbleSolver("AA");
         assertEquals(scrabbleSolver.score(), 2);
     }
     @Test
-    public void returns3whenGivenThreeAs(){
+    public void is3whenGivenThreeAs(){
         ScrabbleSolver scrabbleSolver = new ScrabbleSolver("AAA");
         assertEquals(scrabbleSolver.score(), 3);
     }
     @Test
-    public void returns10whenGivenZ(){
+    public void is10whenGivenZ(){
         ScrabbleSolver scrabbleSolver = new ScrabbleSolver("Z");
         assertEquals(scrabbleSolver.score(), 10);
     }
     @Test
-    public void returns20whenGivenZz(){
+    public void is20whenGivenZz(){
         ScrabbleSolver scrabbleSolver = new ScrabbleSolver("ZZ");
         assertEquals(scrabbleSolver.score(), 20);
     }
     @Test
-    public void returns11whenGivenZA(){
+    public void is11whenGivenZA(){
         ScrabbleSolver scrabbleSolver = new ScrabbleSolver("ZA");
         assertEquals(scrabbleSolver.score(), 11);
     }
     @Test
-    public void returnsScoreWhenGivenWord(){
+    public void is6WhenGivenWord(){
         ScrabbleSolver scrabbleSolver = new ScrabbleSolver("STREET");
         assertEquals(scrabbleSolver.score(), 6);
+    }
+    @Test
+    public void is14WhenGivenCabbage(){
+        ScrabbleSolver scrabbleSolver = new ScrabbleSolver("CABBAGE");
+        assertEquals(scrabbleSolver.score(), 14);
+    }
+    @Test
+    public void is14WhenGivenOXYPHENBUTAZONE(){
+        ScrabbleSolver scrabbleSolver = new ScrabbleSolver("OXYPHENBUTAZONE");
+        assertEquals(scrabbleSolver.score(), 41);
     }
 }
 

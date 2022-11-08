@@ -8,7 +8,7 @@ public class ScrabbleSolver {
 
     ScrabbleSolver(String inputWord){
         word = inputWord;
-        setLetterScore();
+        setLetterScores();
     }
     public Integer score(){
         int total = 0;
@@ -19,13 +19,29 @@ public class ScrabbleSolver {
         }
         return total;
     }
-    public void setLetterScore(){
+    public void setLetterScores(){
         letterScore = new HashMap<>();
-        letterScore.put('A', 1);
+        String onePoint = "AEIOULNRST";
+        for (int i = 0; i < onePoint.length(); i++) {
+            letterScore.put(onePoint.charAt(i), 1);
+        }
+
+        letterScore.put('D', 2);
+        letterScore.put('G', 2);
+
+        String threePoints = "BCMP";
+        for (int i = 0; i < threePoints.length(); i++) {
+            letterScore.put(threePoints.charAt(i), 3);
+        }
+
+        String fourPoints = "FHVWY";
+        for (int i = 0; i < fourPoints.length(); i++) {
+            letterScore.put(fourPoints.charAt(i), 4);
+        }
+        letterScore.put('K', 5);
+        letterScore.put('J', 8);
+        letterScore.put('X', 8);
+        letterScore.put('Q', 10);
         letterScore.put('Z', 10);
-        letterScore.put('S', 1);
-        letterScore.put('T', 1);
-        letterScore.put('R', 1);
-        letterScore.put('E', 1);
     }
 }
