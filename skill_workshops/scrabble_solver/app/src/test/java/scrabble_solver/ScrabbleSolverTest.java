@@ -40,5 +40,10 @@ public class ScrabbleSolverTest {
         ScrabbleSolver scrabbleSolver = new ScrabbleSolver("ZA");
         assertEquals(scrabbleSolver.score(), 11);
     }
+    @Test
+    public void returnsScoreWhenGivenWord(){
+        ScrabbleSolver scrabbleSolver = new ScrabbleSolver("STREET");
+        assertEquals(scrabbleSolver.score(), 6);
+    }
 }
 
