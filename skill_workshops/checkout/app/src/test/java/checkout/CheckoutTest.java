@@ -46,4 +46,12 @@ public class CheckoutTest {
     public void dealFor2B(){
         assertEquals(shop.checkout("BB"), 45);
     }
+    @Test
+    public void bigSaleWithDeals(){
+        assertEquals(shop.checkout("AAABBAAACD"), 340);
+    }
+    @Test
+    public void bigSaleWithDealsError(){
+        assertEquals(shop.checkout("AAABBAAAaCD"), -1);
+    }
 }

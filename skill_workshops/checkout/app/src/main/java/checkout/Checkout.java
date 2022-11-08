@@ -5,6 +5,7 @@ public class Checkout {
         Integer total = 0;
         Integer aCount = 0;
         Integer bCount = 0;
+
         for (int i = 0; i < inputSKUs.length(); i++) {
             if (inputSKUs.charAt(i) == 'A') {
                 aCount++;
