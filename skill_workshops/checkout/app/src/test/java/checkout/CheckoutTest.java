@@ -30,4 +30,9 @@ public class CheckoutTest {
         Checkout shop = new Checkout();
         assertEquals(shop.checkout("C"), 20);
     }
+    @Test
+    public void checkoutD(){
+        Checkout shop = new Checkout();
+        assertEquals(shop.checkout("D"), 15);
+    }
 }

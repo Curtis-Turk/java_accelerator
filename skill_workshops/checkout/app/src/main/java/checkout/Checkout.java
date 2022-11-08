@@ -8,8 +8,10 @@ public class Checkout {
                total += 50;
            }else if(inputSKUs.charAt(i) == 'B') {
                total += 30;
-           }else
+           }else if(inputSKUs.charAt(i) == 'C') {
                total += 20;
+           }else
+               total += 15;
         }
         return total;
     }
