@@ -34,4 +34,9 @@ public class ChangeConverterTest {
         actual.add("2p");
         assertEquals(change.convert(0.04), actual);
     }
+    @Test
+    public void fivePence(){
+        actual.add("5p");
+        assertEquals(change.convert(0.05), actual);
+    }
 }

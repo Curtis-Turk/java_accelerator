@@ -8,7 +8,11 @@ public class ChangeConverter {
     public ArrayList<String> convert(double inputNumber){
         amountLeft = inputNumber;
         while(amountLeft > 0.00) {
-            if (isBetween(amountLeft,0.02,0.04)) {
+            if(isBetween(amountLeft, 0.05, 0.09)){
+                change.add("5p");
+                amountLeft -= 0.05;
+            }
+            else if  (isBetween(amountLeft,0.02,0.04)) {
                 change.add("2p");
                 amountLeft -= 0.02;
             } else if(isBetween(amountLeft,0.01,0.01)){
