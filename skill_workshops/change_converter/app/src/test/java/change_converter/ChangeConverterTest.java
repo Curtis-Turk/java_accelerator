@@ -18,7 +18,20 @@ public class ChangeConverterTest {
     assertEquals(change.convert(0.01), actual);
  }
  @Test
- public void test(){
-     System.out.println(actual);
+ public void twoPence(){
+     actual.add("2p");
+     assertEquals(change.convert(0.02), actual);
  }
+    @Test
+    public void threePence(){
+        actual.add("2p");
+        actual.add("1p");
+        assertEquals(change.convert(0.03), actual);
+    }
+    @Test
+    public void fourPence(){
+        actual.add("2p");
+        actual.add("2p");
+        assertEquals(change.convert(0.04), actual);
+    }
 }
