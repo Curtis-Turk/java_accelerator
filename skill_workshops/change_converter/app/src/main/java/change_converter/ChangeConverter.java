@@ -9,6 +9,7 @@ public class ChangeConverter {
     public ArrayList<String> convert(double inputNumber) {
         inputNumber *= 100;
         amountLeft = inputNumber;
+        addChange("£5", 500);
         addChange("£2", 200);
         addChange("£1", 100);
         addChange("50p", 50);

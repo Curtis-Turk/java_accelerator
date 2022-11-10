@@ -66,4 +66,10 @@ public class ChangeConverterTest {
         actual.add("£2");
         assertEquals(change.convert(2), actual);
     }
+
+    @Test
+    public void fivePound(){
+        actual.add("£5");
+        assertEquals(change.convert(5), actual);
+    }
 }
