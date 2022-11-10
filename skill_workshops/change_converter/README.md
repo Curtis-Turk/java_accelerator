@@ -23,4 +23,4 @@ change_generator.convert(76.81)
 
 - Write a change generator for a different currency e.g. USD.
 
-- Turn you change converter into a cash machine, but pre-loading it with notes and change. Keep track of how much money it has dispensed, and notify the user when it runs out.
+- Turn you change converter into a cash machine, but preloading it with notes and change. Keep track of how much money it has dispensed, and notify the user when it runs out.

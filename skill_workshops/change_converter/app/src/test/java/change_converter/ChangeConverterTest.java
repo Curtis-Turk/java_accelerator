@@ -1,9 +1,9 @@
 package change_converter;
 
-import org.checkerframework.checker.units.qual.C;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import static org.junit.Assert.*;
 
@@ -11,6 +11,7 @@ public class ChangeConverterTest {
 
     public static ChangeConverter change = new ChangeConverter();
     public static ArrayList<String> actual = new ArrayList<>();
+//@AfterEach
 
  @Test
     public void format1p(){
@@ -52,6 +53,11 @@ public class ChangeConverterTest {
         assertEquals(change.convert(0.10), actual);
     }
     @Test
+    public void twentyPence(){
+        actual.add("20p");
+        assertEquals(change.convert(0.20), actual);
+    }
+    @Test
     public void fiftyPence(){
         actual.add("50p");
         assertEquals(change.convert(0.50), actual);
@@ -71,5 +77,32 @@ public class ChangeConverterTest {
     public void fivePound(){
         actual.add("£5");
         assertEquals(change.convert(5), actual);
+    }
+    @Test
+    public void tenPound(){
+        actual.add("£10");
+        assertEquals(change.convert(10), actual);
+    }
+    @Test
+    public void twentyPound(){
+        actual.add("£20");
+        assertEquals(change.convert(20), actual);
+    }
+    @Test
+    public void fiftyPound(){
+        actual.add("£50");
+        assertEquals(change.convert(50), actual);
+    }
+    @Test
+    public void a1999test(){
+        ArrayList<String> test = new ArrayList<>();
+        Collections.addAll(test,"£10", "£5", "£2", "£2", "50p", "20p", "20p", "5p", "2p", "2p");
+        assertEquals(change.convert(19.99), test);
+    }
+    @Test
+    public void a7681test(){
+        ArrayList<String> test = new ArrayList<>();
+        Collections.addAll(test,"£50", "£20", "£5", "£1", "50p", "20p", "10p", "1p");
+        assertEquals(change.convert(76.81), test);
     }
 }
